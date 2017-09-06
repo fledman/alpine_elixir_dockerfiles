@@ -1,5 +1,5 @@
 ARG ALPINE_VERSION=latest
-FROM alpine:$ALPINE_VERSION
+FROM alpine:${ALPINE_VERSION}
 
 MAINTAINER David Feldman <dbfeldman@gmail.com>
 
