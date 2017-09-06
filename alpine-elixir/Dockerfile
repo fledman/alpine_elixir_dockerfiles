@@ -1,11 +1,13 @@
-ARG ALPINE_ERLANG_VERSION=latest
-
-FROM fledman/alpine-erlang:$ALPINE_ERLANG_VERSION
+ARG ALPINE_VERSION=latest
+FROM alpine:$ALPINE_VERSION
 
 MAINTAINER David Feldman <dbfeldman@gmail.com>
 
+COPY rootfs /
+
+RUN apk-install erlang && clear-apk-cache
+
 ARG ELIXIR_VERSION=1.5.1
-ENV ELIXIR_VERSION $ELIXIR_VERSION
 
 RUN apk-install --virtual deps wget ca-certificates && \
     wget https://github.com/elixir-lang/elixir/releases/download/v${ELIXIR_VERSION}/Precompiled.zip && \
@@ -16,4 +18,5 @@ RUN apk-install --virtual deps wget ca-certificates && \
     rm -rf /etc/ssl && \
     clear-apk-cache
 
-ENV PATH $PATH:/opt/elixir-${ELIXIR_VERSION}/bin
+ENV ELIXIR_VERSION=$ELIXIR_VERSION \
+    PATH=$PATH:/opt/elixir-${ELIXIR_VERSION}/bin
