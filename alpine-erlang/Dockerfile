@@ -1,6 +1,6 @@
 ARG ALPINE_BASE_VERSION=latest
 
-FROM alpine-base:$ALPINE_BASE_VERSION
+FROM fledman/alpine-base:$ALPINE_BASE_VERSION
 
 MAINTAINER David Feldman <dbfeldman@gmail.com>
 

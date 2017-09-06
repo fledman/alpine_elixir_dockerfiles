@@ -1,6 +1,6 @@
 ARG ALPINE_ELIXIR_VERSION=latest
 
-FROM alpine-elixir:$ALPINE_ELIXIR_VERSION
+FROM fledman/alpine-elixir:$ALPINE_ELIXIR_VERSION
 
 MAINTAINER David Feldman <dbfeldman@gmail.com>
 

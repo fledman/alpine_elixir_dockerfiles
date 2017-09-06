@@ -1,6 +1,6 @@
 ARG ALPINE_ERLANG_VERSION=latest
 
-FROM alpine-erlang:$ALPINE_ERLANG_VERSION
+FROM fledman/alpine-erlang:$ALPINE_ERLANG_VERSION
 
 MAINTAINER David Feldman <dbfeldman@gmail.com>
 
